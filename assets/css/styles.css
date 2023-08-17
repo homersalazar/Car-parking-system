@@ -1,0 +1,28 @@
+@import url("index.css");
+
+:root {
+    --text: #020005;
+    --background: #ffffff;
+    --primary: #6818fb;
+    --secondary: #c7aafe;
+    --accent: #4e03d8;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: var(--background);
+    color: var(--text);
+}
+
+/* Media query for small screen sizes */
+@media (max-width: 767px) {
+    .notifyjs-corner {
+        top: 50px; 
+        max-width: 100%;
+    }
+}
