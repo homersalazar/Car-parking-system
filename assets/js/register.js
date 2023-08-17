@@ -1,44 +1,33 @@
-const phoneInput = document.getElementById("phoneInput");
-phoneInput.addEventListener("input", function(event) {
-    this.value = this.value.replace(/\D/g, "");
+document.addEventListener("DOMContentLoaded", function () {
+    const passwordInput = document.getElementById("password");
+    const showHideButton = document.getElementById("check");
+    const eyeIcon = document.getElementById("eyeIcon");
+    const eyeSlashIcon = document.getElementById("eyeSlashIcon");
+    showHideButton.addEventListener("click", function () {
+        if (passwordInput.type === "text") {
+            passwordInput.type = "password";
+            eyeSlashIcon.classList.remove("hidden");
+            eyeIcon.classList.add("hidden");
+        } else {
+            passwordInput.type = "text";
+            eyeSlashIcon.classList.add("hidden");
+            eyeIcon.classList.remove("hidden");
+        }
+    });
 });
 
-const previewImage = (input) => {
-    const preview = document.getElementById('profile-preview');
-    
-    if (input.files && input.files[0]) {
-        const reader = new FileReader();
-        
-        reader.onload = function(e) {
-            preview.src = e.target.result; 
-        };
-        
-        reader.readAsDataURL(input.files[0]);
-    }
-}
-
 // $(document).ready(function() {
-//     $("#myForm").submit(function(event) {
-//         event.preventDefault(); 
-//         $.notify("Register successfully!", {
-//             position: "top right",
-//             className: "success"
-//         });
-//     });
-// });
-
-// $(document).ready(function() {
-//     $('#myForm').submit(function(e) {
+//     $('#register_form').submit(function(e) {
 //         e.preventDefault();
 //         $.ajax({
 //             type: "POST",
-//             url: "../entities/action.php", // Replace with the actual URL
+//             url: "./entities/action.php", // Replace with the actual URL
 //             data: $(this).serialize(),
 //             dataType: "json",
 //             success: function(response) {
 //                 if (response.status === "success") {
-//                     // Redirect to the profile page
-//                     window.location.href = "../profile.php?id=" + response.id;
+//                     $.notify(response.message, { position: "top right", className: "error" });
+//                     window.location.href = "profile.php?id=" + response.id;
 //                 } else {
 //                     // Display the notification
 //                     $.notify(response.message, { position: "top right", className: "error" });

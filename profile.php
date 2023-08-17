@@ -113,7 +113,7 @@
             </div>
         </form>
     </div>
-    <script src="./assets/js/register.js"></script>
+    <script src="./assets/js/profile.js"></script>
 <?php 
     require_once("./includes/footer.php");
 ?>

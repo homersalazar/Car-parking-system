@@ -16,13 +16,14 @@
             <div class="font-bold text-4xl sm:text-center mb-10">
                 <h1>Login to your Account</h1>
             </div>
-            <form action="" method="post">
+            <form action="./entities/action.php" method="post">
                 <div class="relative py-2">
                     <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                         <i class="fa-regular fa-envelope"></i>
                     </div>
                     <input 
                         type="text" 
+                        name="e_mail"
                         class="block w-full px-16 py-3 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500" 
                         placeholder="Email" 
                         required
@@ -33,6 +34,7 @@
                         <i class="fa-solid fa-lock"></i>
                     </div>
                     <input 
+                        name="pass_word"
                         type="password"
                         class="block w-full px-16 py-3 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500" 
                         placeholder="Password" 
@@ -47,6 +49,7 @@
                         <i class="fa-solid fa-eye-slash" id="eyeSlashIcon"></i>
                     </button>
                 </div>
+                <input type="hidden" name="btn_action" value="login">
                 <button type="submit" class="px-[7.5rem] py-3 bg-blue-700 rounded-full text-white mb-10">
                     Sign up
                 </button>
