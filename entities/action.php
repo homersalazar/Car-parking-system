@@ -30,4 +30,8 @@
     if(isset($_POST['btn_action']) && $_POST['btn_action'] == "login"){
         $login = $userObj->login();
     }
+    
+    if(isset($_GET['btn_action']) && $_GET['btn_action'] == "logout"){
+        $userObj->logout();
+    }
 ?>

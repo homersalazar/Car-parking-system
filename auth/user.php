@@ -1,4 +1,5 @@
 <?php 
+    session_start();    
     class User {
         
         private $conn;
@@ -71,7 +72,7 @@
         public function login(){
             $email = $this->conn->real_escape_string($_POST['e_mail']);
             $password = $_POST['pass_word'];
-            $query = "SELECT id, pass_word, role FROM {$this->userTable} WHERE e_mail = ?";
+            $query = "SELECT id, full_name, e_mail, pass_word, role FROM {$this->userTable} WHERE e_mail = ?";
             $stmt = $this->conn->prepare($query);
             $stmt->bind_param("s", $email);
             $stmt->execute();
@@ -82,10 +83,10 @@
                 $storedHashedPassword = $row['pass_word'];
         
                 if (password_verify($password, $storedHashedPassword)) {
-                    session_start();
                     $_SESSION['ID'] = $row['id'];
+                    $_SESSION['Fullname'] = $row['full_name'];
+                    $_SESSION['Email'] = $row['e_mail'];
                     $_SESSION['Role'] = $row['role'];
-                    
                     if ($_SESSION['Role'] === 0) {
                         header("Location: ../admin/index.php");
                         exit();
@@ -106,6 +107,15 @@
                 echo '</script>';
             }
         }
+
+        public function logout() {
+            session_start();
+            session_unset();
+            session_destroy();
+            header("Location: ../login.php");
+            exit();
+        }
+        
         
         
     }
