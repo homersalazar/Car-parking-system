@@ -61,9 +61,9 @@
                 </a>
             </li>
             <li>
-                <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                <a href="../admin/manufacturer.php" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                     <i class="fa-solid fa-table-cells-large"></i>
-                    <span class="flex-1 ml-3 whitespace-nowrap">Vehicle Category</span>
+                    <span class="flex-1 ml-3 whitespace-nowrap">Vehicle Manufacturer</span>
                     <!-- <span class="inline-flex items-center justify-center px-2 ml-3 text-sm font-medium text-gray-800 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">Pro</span> -->
                 </a>
             </li>
